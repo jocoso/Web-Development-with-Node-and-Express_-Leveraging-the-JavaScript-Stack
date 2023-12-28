@@ -8,7 +8,7 @@
 
 ```node helloWorld.js```
 
-# To Test Try Visiting:
+# To Test, Try Visiting:
 
 ```
 http://localhost:3000/
