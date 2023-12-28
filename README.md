@@ -1,3 +1,8 @@
 ﻿# Web Development with Node and Express.
 
 Adding my notes about the book and my own examples with more comments.
+
+##### Table of Contents  
+
+- [Chapter 1: Introducing Express](https://github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack/tree/ch1)
+- [Chapter 2: Getting Started with Node](https://github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack/tree/ch2)
