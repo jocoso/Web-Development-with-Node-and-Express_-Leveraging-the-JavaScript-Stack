@@ -6,7 +6,10 @@
 
 # Executing
 
-```node helloWorld.js```
+```
+git checkout ch2
+node helloWorld.js
+```
 
 # To Test, Try Visiting:
 
