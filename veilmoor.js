@@ -15,6 +15,18 @@ var handlebars = require('express3-handlebars')
 // will be set to 3000 by default
 app.set('port', process.env.PORT || 3000);
 
+// Designates root/public as the static directory
+// creates a route for each static file we want to
+// deliver that renders a file and returns it to the client
+app.use(express.static(__dirname + '/public'));
+
+var fortunes = [
+	"In the corner of your eyes you see an old woman staring at you",
+	"Your body is heavy. You feel like killing",
+	"The mark burns your skin. You lose a point of health",
+	"You hear a voice next to your ear. It tells you to visit the cementery."
+];
+
 // Both functions return plaintext with a status code of 200 (OK)
 // 200 is app.get's default status code and doesn't have to be specified.
 app.get('/', function(req, res) {
@@ -22,7 +34,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/about', function(req, res) {
-	res.render('about');
+	var randomFortune = fortunes[
+		Math.floor(Math.random() * fortunes.length)
+	];
+	res.render('about', { fortune: randomFortune });
 });
 
 // Custom 404 (Not Found) page
