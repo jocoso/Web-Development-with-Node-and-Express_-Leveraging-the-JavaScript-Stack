@@ -1,0 +1,30 @@
+{
+  "name": "veilmoor-travel",
+  "version": "1.0.0",
+  "description": "Learning how to code in Express by following a book.",
+  "main": "veilmoor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack.git"
+  },
+  "keywords": [
+    "learn",
+    "express",
+    "express",
+    "node",
+    "coding"
+  ],
+  "author": "Joshua Collado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack/issues"
+  },
+  "homepage": "https://github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express3-handlebars": "^0.5.2"
+  }
+}
