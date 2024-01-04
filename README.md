@@ -71,11 +71,11 @@ In general, the performance difference between these methods might be negligible
 
 Model-View-Controller (MVC) is a design pattern used in software development to organize code in a way that separates concerns and promotes modularity. It divides an application into three interconnected components:
 
-    Model: This component represents the application's data and business logic. It is responsible for retrieving and managing data, as well as defining the rules for manipulating that data. The Model responds to requests from the Controller and notifies the View about any changes in the data.
+- Model: This component represents the application's data and business logic. It is responsible for retrieving and managing data, as well as defining the rules for manipulating that data. The Model responds to requests from the Controller and notifies the View about any changes in the data.
 
-    View: The View is responsible for presenting data to the user and capturing user interactions. It displays the information from the Model and sends user inputs to the Controller. Views are typically the graphical user interface (GUI) elements in a web or desktop application.
+- View: The View is responsible for presenting data to the user and capturing user interactions. It displays the information from the Model and sends user inputs to the Controller. Views are typically the graphical user interface (GUI) elements in a web or desktop application.
 
-    Controller: The Controller acts as an intermediary between the Model and the View. It receives user inputs from the View, processes them, and updates the Model accordingly. The Controller also listens for changes in the Model and updates the View to reflect those changes. It essentially serves as the application's logic or "brain."
+- Controller: The Controller acts as an intermediary between the Model and the View. It receives user inputs from the View, processes them, and updates the Model accordingly. The Controller also listens for changes in the Model and updates the View to reflect those changes. It essentially serves as the application's logic or "brain."
 
 By separating these concerns, the MVC pattern makes it easier to manage and maintain complex applications. It enhances modularity and code reusability, making it possible to update one component without affecting the others. This separation of concerns is fundamental in achieving a clean and scalable architecture.
 
