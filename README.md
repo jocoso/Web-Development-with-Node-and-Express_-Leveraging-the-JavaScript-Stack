@@ -178,7 +178,7 @@ Ensure that there is a directory named *public* located in the *root directory* 
 
 ## Vocabulary
 
-|  |  |
+| Word | Definition |
 |:------:|------|
 |**Boilerplate**| A set of pre-written code that a programmer can use and reuse for convenience.|
 |**Entry Point**| The function or file where an application begins. The first program's code to be executed.
@@ -189,7 +189,7 @@ Ensure that there is a directory named *public* located in the *root directory* 
 
 ## Code Nugget
 
-| | |
+| Code | Nugget of information |
 |----|----|
 |```npm install <package-name>```| Installs a package, and any packages that it depends on. If the package has a *package-lock* or *shrinkwrap file*, the installation of dependencies will be driven by that, an *npm-shrinkwrap.json* taking precedence if both files exist. Install the dependencies in the local *node_modules* folder. </br></br> In global mode (ie, with ```-g``` or ```--global``` appended to the command), it installs the current package context (ie, the current working directory) as a global package. </br></br>By default, ```npm install``` will install all modules listed as dependencies in *package.json*. </br></br>With the ```--production``` flag (or when the *NODE_ENV* environment variable is set to production), npm will not install modules listed in *devDependencies*. To install all modules listed in both *dependencies* and *devDependencies* when the *NODE_ENV* environment variable is set to production, you can use ```--production=false```.|
 |```node <entry-point>.js```| Execute the entry point of the application.|
@@ -201,4 +201,30 @@ Ensure that there is a directory named *public* located in the *root directory* 
 | Syntax | Usage | Parameters | Return Value |
 | ------ | ----- | ---------- | ------------ |
 |```app.set(```</br> &emsp; ```name,``` </br> &emsp; ```value``` </br>```);```| Assigns setting name to value. Certain names can be used to configure the behaviour of the server.| **name:** A string we can use to retrieve a value.</br></br> **value:** The object to store. (Can be any type)|Null|
-|```app.get(```</br> &emsp; ```path,```</br> &emsp; ```callback [, callback...]``` </br>```);```| Routes HTTP GET requests to the specified path with the specified callback functions.| **path:** A path for which the middleware function is invoked; can be any of:</br> &emsp; > A string representing a path. </br> &emsp; > A path pattern. </br> &emsp; > A regular expression patter to match paths. </br> &emsp; > An array of combination of any of the above.</br></br> **Default:** '/' (root path)| Null|
+|```app.get(```</br> &emsp; ```path,```</br> &emsp; ```callback [, callback...]``` </br>```);```| Routes HTTP GET requests to the specified path with the specified callback functions.| **path:** A path for which the middleware function is invoked; can be any of:</br> &emsp; > A string representing a path. </br> &emsp; > A path pattern. </br> &emsp; > A regular expression patter to match paths. </br> &emsp; > An array of combination of any of the above.</br></br>Default: '/' (root path)</br></br>**callback:** Callback functions; can be:</br></br> &emsp; > A middleware function.</br>&emsp; > A series of middleware functions (separated by commas).</br>&emsp;> An array of middlware functions.</br>&emsp;> A combination of the above. </br></br> You can provide multiple callback functions that behave just like middleware, except that these callbacks can invoke next ('route') to bypass the remaining route callback(s). You can use this mechanism to impose pre-conditions on a route, then pass control to subsequent routes if there is no reason to proceed with the current route.</br></br>Since router and app implement the middleware interface, you can use them as you would any other middleware function.</br></br>Default: None|Object| 
+|```app.get(name);```|Returns the value of *name* app setting, where *name* is one of the strings in the app setting table.|**name:** A string in the app setting table assigned beforehand by the programmer by using ```app.set(name, value);```|Value of name app setting.|
+|```res.send([body]);```| Sends the HTTP response. This method perform useful tasks for non-streaming responses such as automatically assigning the Content-Length HTTP response header field and providing automatic HEAD (*chuckle*) and HTTP chache freshness support.</br></br>When the parameter is a *Buffer* object, the method sets the Content-Type to "application/octet-stream".</br></br> When the parameter is a *String*, the method set the Content-Type to "text/html".</br></br>When the parameter is an *Array* or *Object*, Express responds with the JSON representation. | **body:** The body parameter can be a Buffer object, a String, an Object, Boolean, or an Array.|Object|
+|```res.set(field [, value]);```| Sets the response's HTTP header *field* to *value*. To set multiple fields at once, pass an object as the parameter.|**field:** A string representing the name of the field.</br></br>**value:** the value assigned to the field parameter.|Object|
+|```res.status(code);```| Sets the HTTP status for the response. It is a chainable alias of Node's ```response.statusCode``` | **code:** An HTTP [status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) | Object |
+|```res.type(type);```| Sets the Content-Type HTTP header to the MIME type as determined by the specified type. If type contains the '/' character, then it sets the Content-Type to the exact value of type, otherwise it is assumed to be a file extension and the MIME type is looked up in a mapping using the ```express.static.mime.lookup()``` method.|**type:** describes the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).|Object|
+|```app.engine(ext, callback);```| The ```app.engine()``` is used to register the given template engine callback as ext.|**ext:** The extension type like ejs, hbs, etc.</br></br>**callback:** The function passed as a parameter.|Object|
+
+
+## Sources
+
+- “What Is a Rest Api?” IBM, www.ibm.com/topics/rest-apis. Accessed 4 Jan. 2024.
+
+- Bhanushali, Ronak. “What Is the Purpose of ‘node_modules’ Folder?” CodeForGeek, 29 Dec. 2023, codeforgeek.com/what-is-the-purpose-of-node-modules-folder/.
+
+- T, Gabby. “The Basics of Package.Json.” The NodeSource Blog - Node.Js Tutorials, Guides, and Updates, The NodeSource Blog #shoptalk | The Enterprise Node CompanyTM Providing Enterprise Node.js Training, Support, Software & Consulting, Worldwide, 15 Feb. 2022, nodesource.com/blog/the-basics-of-package-json/.
+
+- Hernandez, Rafael D. “The Model View Controller Pattern – MVC Architecture and Frameworks Explained.” freeCodeCamp.Org, freeCodeCamp.org, 20 Apr. 2021, www.freecodecamp.org/news/the-model-view-controller-pattern-mvc-architecture-and-frameworks-explained/.
+
+- “NPM-Init.” Npm Docs, docs.npmjs.com/cli/v7/commands/npm-init. Accessed 4 Jan. 2024.
+
+- “NPM-Install.” Npm Docs, docs.npmjs.com/cli/v9/commands/npm-install. Accessed 4 Jan. 2024.
+
+- “4.X API.” Express 4.x - API Reference, expressjs.com/en/api.html#app.engine. Accessed 4 Jan. 2024.
+
+- Brown, Ethan. “Saving Time with Express.” Web Development with Node and Express: Leveraging the JavaScript Stack, O’Reilly Media, Inc., Sebastopol,  CA, 2020, pp. 9–18.
+
