@@ -120,4 +120,7 @@ We could use packages like: ```license-sniffer``` or ```license-spelunker``` whi
 *OpenAI. (2023). ChatGPT (Mar 14 version) [Large language model]. https://chat.openai.com/chat (For vocabulary)*
 
 
-[Chapter 2: Getting Started with Node](https://github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack/tree/ch2) -->
+
+
+</br></br></br></br></br></br>
+**[Chapter 2: Getting Started with Node](https://github.com/jocoso/Web-Development-with-Node-and-Express_-Leveraging-the-JavaScript-Stack/tree/ch2) -->**
